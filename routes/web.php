@@ -2,6 +2,8 @@
 
 use Illuminate\Support\Facades\Route;
 
+use App\Http\Controllers\RickAndMortyApiController;
+
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -16,6 +18,8 @@ use Illuminate\Support\Facades\Route;
 Route::get('/', function () {
     return view('home');
 });
+
+Route::get('/rick_and_morty/{page}', [RickAndMortyApiController::class,'getCharactersInfoFromApi']);
 
 Route::get('/about', function () {
     return view('about');
